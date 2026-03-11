@@ -96,40 +96,66 @@ body {
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .social-icon {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Larger icon size */
     color: var(--text-secondary);
-    background-color: var(--tag-bg);
+    background: linear-gradient(145deg, var(--tag-bg), #1c253a);
     border: 1px solid var(--tag-border);
-    width: 45px;
-    height: 45px;
+    width: 60px; /* Larger button width */
+    height: 60px; /* Larger button height */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 16px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.social-icon:hover::before {
+    left: 100%;
 }
 
 .social-icon:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-purple);
+    transform: translateY(-8px) scale(1.1);
     color: white;
-    background-color: rgba(125, 95, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(125, 95, 255, 0.3);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 .linkedin:hover {
-    color: #0077b5;
-    border-color: #0077b5;
+    background: #0077b5;
+    border-color: #00a0dc;
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
 }
 
 .github:hover {
-    color: #ffffff;
-    border-color: #ffffff;
+    background: #333;
+    border-color: #6e5494;
+    box-shadow: 0 0 20px rgba(110, 84, 148, 0.6);
+}
+
+.social-icon i {
+    transition: transform 0.4s ease;
+}
+
+.social-icon:hover i {
+    transform: rotate(360deg);
 }
 
 
